@@ -1,0 +1,14 @@
+Example run apache webserver (httpd)
+1. Create ec2 instance
+2. Download private key
+3. Conver the .pem to ppk  using puttygen so that we can ssh to ec2 instance using puttygen
+4. ssh to ec2 instance
+5. yum update   (take latet os)
+6. yum install httpd -y
+7  service http start
+8  chkconfig httpd on   (this command ensure that httpd bootsup when ec2 bootsup)
+9. service http status ( show if service httpd is running)
+10. go to  /var/www/html  (root directory of webserver)
+11. Creat a index.html   
+     (<html><body><h1>Hello World!</h1></body></html>
+12.  Go to browser  copy public ip  and hit enter  done !	 

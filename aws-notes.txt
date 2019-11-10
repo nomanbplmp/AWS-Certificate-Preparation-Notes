@@ -1,0 +1,93 @@
+Objective     Weighting
+Domain 1 : Deployment  22%
+Domain 2 : Security 	26%
+Domain 3 : Development and aws services  30 %
+Domain 4 : Refactoring 10%
+Doamin 5 : Monitoring and Troubleshooting 12%
+
+
+IAM  : Capablities 
+					IAM is unversal
+					Manage users and their access
+					Cetralized control for aws account
+					Shared access to aws account
+					Granular permission
+					Identity Federation(including active directory, facebook, linkedin etc)
+					Multifactror Authentication
+					Can provision temporary access to aws resources and accounts
+					password roation policy
+					integrates with many different IWM services
+					supports PCI DSS compliance for any applications associated with the payment card industry.
+	 Critical Terms
+					User(End users)
+					Groups (one or more users)
+					Roles  : Defines set of permission
+					Polices :  Document Defining permssion. Can we assigned to user/groups/roles
+
+EC2 :
+       Elastic cloud compute
+       EC2 OPTION :
+             Ondemand : allow to pay fixed rate by hour(or by second) with no commitment
+				This is basically perfect for users that want the low cost and flexibility of AC too without any
+				upfront payments or long term commitments.
+				It's also good for applications with short term or spiky or unpredictable workloads that cannot be interrupted
+				and applications that are being developed or tested on Amazon to for the first time and basically throughout
+			 
+			Reserve  : Reserve resource. May get heavy discount on hourly change.
+						Steady State or very predictable usage.
+						So these might be your you know your web web servers for example.
+						So applications that require a reserved capacity and users can make upfront payments to reduce the total computing costs even further.
+						And the way it works essentially is that if you pay for it all up front a
+			 
+			Spot     :  spot instances or applications that have flexible start and end times
+						and applications that are only feasible at very low compute prices.
+						So a lot of genomics companies you know people who are in the sort of genome field or big pharmaceuticalcompanies or you know chemical companies use this you know spot instances to do huge amounts.spot instances great for users with an urgent need for large amounts of additional computing capacity.
+			 
+			 
+			Dedicated host: useful for regulatory requirements that may not support multitenant.
+							great for licensing which does not support multi-tenancy or cloud deployments and it can be purchased. Can be opt on demand
+							
+					How to rember instance types : see image rember-ec2-instance.jpg
+
+EBS  :  Elastic block storage, Allow to create storage volumes and attach to EC2 instance
+	    Is virtual storage. Stays in a zone. Replicate automatically to survive disc failure
+		Database/file systems or can be used any other way as block storage.
+		
+		EBS Types:  
+					1. General purpose  ssd (GP2)
+							It balances both price and performance and you get a ratio of three IOPS per gig with up to 10000 IOPS
+							and the ability to burst up to 3000 IOPS for extended periods of time for volumes at three thousand three hundred thirty four gigabytes and above.
+
+							So if you see an exam question and it's saying that you know you've got less than less than 10000 IOPS
+							you probably want GP to because it gives you the you know performance as well as best price.	
+
+					2 Provision IOPS  SSD
+                            Designed for IO intensive applications such large relationnal database and NoSql databases.
+							For more than 10000 IOPS
+							Can provision upto 20000 IOPS
+		EBS Volume Types:
+					
+					1. Throughput optimize HDD (ST1)
+						Big Data, Datawarehouse, log processing, cannot be a boot volume
+		Cold  HDD   Lowest cost storage, good for file servers and cannot be a boot volume
+		
+		Magentic volume(standard) : can be used for volume. lowest 	per gigbyte of all bootable types
+		
+		
+
+Elastic Load Balanceers: 
+					
+					Application Load balancer : Makes clever routing decision. Are application aware.
+												works layer 7. best suited for http and https
+					Network load balancer : 	operates at layer 4. Expensive. They are fast
+												operation operating at the connection level low for network load balance is capable of handling millions of requests per second while maintaining ultra low latenies.So use a network load balance for an extreme performance but do bear in mind it is going to be the most costly load balance of the three different load balances.
+					classic load balancer : 	Legacy. 
+												If your application stops responding the elastic load balance or Costic load balancer responds with
+												a 504 error.And this means that the application is having issues.
+												And this could either be at the web server layer or the database layer.
+												But basically it's not the load balancer itself that's having the issue.
+												It's something below the load balance.It's just not getting a response.
+												
+Route 53:   	Aws DNS Service. Maps domain name to resource like ec2,load balancer, s3 buckets etc.
+
+			
